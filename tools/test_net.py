@@ -58,6 +58,7 @@ def parse_args():
     return args
 
 if __name__ == '__main__':
+    print '###################### TEST ############################'
     args = parse_args()
 
     print('Called with args:')
@@ -81,7 +82,8 @@ if __name__ == '__main__':
     caffe.set_device(args.gpu_id)
     net = caffe.Net(args.prototxt, args.caffemodel, caffe.TEST)
     net.name = os.path.splitext(os.path.basename(args.caffemodel))[0]
-
+    print '$$$$$$$$$$$'
+    print args.imdb_name
     imdb = get_imdb(args.imdb_name)
     imdb.competition_mode(args.comp_mode)
     if not cfg.TEST.HAS_RPN:

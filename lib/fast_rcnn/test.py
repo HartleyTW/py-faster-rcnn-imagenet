@@ -227,6 +227,7 @@ def apply_nms(all_boxes, thresh):
 def test_net(net, imdb, max_per_image=100, thresh=0.05, vis=False):
     """Test a Fast R-CNN network on an image database."""
     num_images = len(imdb.image_index)
+    print 'num test images: ' + str(num_images)
     # all detections are collected into:
     #    all_boxes[cls][image] = N x 5 array of detections in
     #    (x1, y1, x2, y2, score)

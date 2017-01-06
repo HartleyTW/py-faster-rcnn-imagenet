@@ -68,6 +68,9 @@ class SolverWrapper(object):
             orig_1 = net.params['bbox_pred'][1].data.copy()
 
             # scale and shift with bbox reg unnormalization; then save snapshot
+            print len(orig_0)
+            print len(orig_1)
+            print len(self.bbox_stds[:, np.newaxis])
             net.params['bbox_pred'][0].data[...] = \
                     (net.params['bbox_pred'][0].data *
                      self.bbox_stds[:, np.newaxis])
